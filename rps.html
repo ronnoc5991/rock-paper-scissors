@@ -5,57 +5,55 @@
     </head>
     <body>
         <script>
-            var options = Array('Rock' , 'Paper' , 'Scissors');
+            var options = Array('ROCK' , 'PAPER' , 'SCISSORS');
+            let computerSelection;
+            let playerSelection;
 
            function computerPlay(){
-            let computerSelection = options[Math.floor(Math.random() *options.length)];
-            console.log('Computer has chosen ' + computerSelection + '!');
-            return computerSelection;
-           }
-
-           function playerPlay(){
-            let playerSelection = options[Math.floor(Math.random() *options.length)];
-            console.log('Player has chosen ' + playerSelection + '!');
-            return playerSelection;
+                computerSelection = options[Math.floor(Math.random() *options.length)];
+                return computerSelection;
            }
         
-           function playRound(){
-               computerPlay();
-               playerPlay();
-               if (playerSelection === 'Rock'){
-                   playerRock();
-               } else if (playerSelection === 'Paper'){
+           function playRound(playerSelection){
+                let computerSelection = computerPlay();
+                playerSelection = playerSelection.toUpperCase();
+                console.log(playerSelection + ' VS ' + computerSelection);
+                if (playerSelection === 'ROCK'){
+                    playerRock();
+//                    console.log('It thinks you played Rock');
+                } else if (playerSelection === 'PAPER'){
                     playerPaper();
-               } else if (playerSelection == 'Scissors'){
-                   playerScissors();
-               } else {
-                    console.log('Something is wrong here!');
-               }
-               return computerSelection;
+//                    console.log('It thinks you played Paper');
+                } else if (playerSelection == 'SCISSORS'){
+                    playerScissors();
+//                    console.log('It thinks you played Scissors');
+                } else {
+//                    console.log('Something is wrong here!');
+                }
                return playerSelection;
            }
 
 
            function playerRock(){
-               if (computerSelection == 'Rock'){
+               if (computerSelection == 'ROCK'){
                     console.log('TIE!');
-               } else if (computerSelection == 'Paper'){
-                    console.log('You Lose!  Paper beats Rock!');
-               } else if (computerSelection == 'Scissors'){
-                    console.log('You Win! Rock beats Scissors!');
+               } else if (computerSelection == 'PAPER'){
+                    console.log('You Lose!  PAPER beats ROCK!');
+               } else if (computerSelection == 'SCISSORS'){
+                    console.log('You Win! ROCK beats SCISSORS!');
                } else {
-                   console.log('Something is wrong here.')
-               }
+                    console.log('Something is wrong here.');
+                }
            }
 
 
            function playerPaper(){
-                if (computerSelection == 'Paper'){
+                if (computerSelection == 'PAPER'){
                     console.log('TIE!');
-                } else if (computerSelection == 'Rock'){
-                    console.log('You Win! Paper beats Rock!');
-                } else if (computerSelection == 'Scissors') {
-                    console.log('You Lose! Scissors beats Paper!');
+                } else if (computerSelection == 'ROCK'){
+                    console.log('You Win! PAPER beats ROCK!');
+                } else if (computerSelection == 'SCISSORS') {
+                    console.log('You Lose! SCISSORS beats PAPER!');
                 } else {
                     console.log('Something is wrong here.');
                 }
@@ -63,20 +61,17 @@
 
 
            function playerScissors(){
-                if (computerSelection == 'Scissors'){
+                if (computerSelection == 'SCISSORS'){
                     console.log('TIE!');
-                } else if (computerSelection == 'Paper'){
-                    console.log('You win! Scissors beats Paper!');
-                } else if (computerSelection == 'Rock'){
-                    console.log('You Lose! Rock beats Scissors!');
+                } else if (computerSelection == 'PAPER'){
+                    console.log('You win! SCISSORS beats PAPER!');
+                } else if (computerSelection == 'ROCK'){
+                    console.log('You Lose! ROCK beats SCISSORS!');
                 } else {
                     console.log('Something is wrong here.');
                 }
            }
 
-
-           let playerSelection;
-           let computerSelection;
 
 
         </script>
