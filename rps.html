@@ -8,6 +8,9 @@
             var options = Array('ROCK' , 'PAPER' , 'SCISSORS');
             let computerSelection;
             let playerSelection;
+            let countWins = 0;
+            let countLosses = 0;
+            let countTies = 0;
 
            function computerPlay(){
                 computerSelection = options[Math.floor(Math.random() *options.length)];
@@ -20,15 +23,12 @@
                 console.log(playerSelection + ' VS ' + computerSelection);
                 if (playerSelection === 'ROCK'){
                     playerRock();
-//                    console.log('It thinks you played Rock');
                 } else if (playerSelection === 'PAPER'){
                     playerPaper();
-//                    console.log('It thinks you played Paper');
                 } else if (playerSelection == 'SCISSORS'){
                     playerScissors();
-//                    console.log('It thinks you played Scissors');
                 } else {
-//                    console.log('Something is wrong here!');
+                      console.log('Something is wrong here!');
                 }
                return playerSelection;
            }
@@ -37,10 +37,13 @@
            function playerRock(){
                if (computerSelection == 'ROCK'){
                     console.log('TIE!');
+                    return ++countTies;
                } else if (computerSelection == 'PAPER'){
                     console.log('You Lose!  PAPER beats ROCK!');
+                    return ++countLosses;
                } else if (computerSelection == 'SCISSORS'){
                     console.log('You Win! ROCK beats SCISSORS!');
+                    return ++countWins;
                } else {
                     console.log('Something is wrong here.');
                 }
@@ -50,10 +53,13 @@
            function playerPaper(){
                 if (computerSelection == 'PAPER'){
                     console.log('TIE!');
+                    return ++countTies;
                 } else if (computerSelection == 'ROCK'){
                     console.log('You Win! PAPER beats ROCK!');
+                    return ++countWins;
                 } else if (computerSelection == 'SCISSORS') {
                     console.log('You Lose! SCISSORS beats PAPER!');
+                    return ++countLosses;
                 } else {
                     console.log('Something is wrong here.');
                 }
@@ -63,21 +69,35 @@
            function playerScissors(){
                 if (computerSelection == 'SCISSORS'){
                     console.log('TIE!');
+                    return ++countTies;
                 } else if (computerSelection == 'PAPER'){
                     console.log('You win! SCISSORS beats PAPER!');
+                    return ++countWins;
                 } else if (computerSelection == 'ROCK'){
                     console.log('You Lose! ROCK beats SCISSORS!');
+                    return ++countLosses;
                 } else {
                     console.log('Something is wrong here.');
                 }
            }
 
            function game(){
-               let playerSelection = window.prompt('What is your selection?');
+               let playerSelection = window.prompt('ROUND 1: What is your selection?');
                playRound(playerSelection);
-
+               console.log('Wins: ' + countWins + ' Losses: ' + countLosses + ' Ties: ' + countTies);
+               playerSelection = window.prompt('ROUND 2: What is your selection?');
+               playRound(playerSelection);
+               console.log('Wins: ' + countWins + ' Losses: ' + countLosses + ' Ties: ' + countTies);
+               playerSelection = window.prompt('ROUND 3: What is your selection?');
+               playRound(playerSelection);
+               console.log('Wins: ' + countWins + ' Losses: ' + countLosses + ' Ties: ' + countTies);
+               playerSelection = window.prompt('ROUND 4: What is your selection?');
+               playRound(playerSelection);
+               console.log('Wins: ' + countWins + ' Losses: ' + countLosses + ' Ties: ' + countTies);
+               playerSelection = window.prompt('ROUND 5: What is your selection?');
+               playRound(playerSelection);
+               console.log('Wins: ' + countWins + ' Losses: ' + countLosses + ' Ties: ' + countTies);
            }
-
 
         </script>
     </body>
