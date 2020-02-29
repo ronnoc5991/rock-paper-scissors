@@ -11,6 +11,7 @@
             let countWins = 0;
             let countLosses = 0;
             let countTies = 0;
+            let countRounds = 1;
 
            function computerPlay(){
                 computerSelection = options[Math.floor(Math.random() *options.length)];
@@ -82,21 +83,21 @@
            }
 
            function game(){
-               let playerSelection = window.prompt('ROUND 1: What is your selection?');
-               playRound(playerSelection);
-               console.log('Wins: ' + countWins + ' Losses: ' + countLosses + ' Ties: ' + countTies);
-               playerSelection = window.prompt('ROUND 2: What is your selection?');
-               playRound(playerSelection);
-               console.log('Wins: ' + countWins + ' Losses: ' + countLosses + ' Ties: ' + countTies);
-               playerSelection = window.prompt('ROUND 3: What is your selection?');
-               playRound(playerSelection);
-               console.log('Wins: ' + countWins + ' Losses: ' + countLosses + ' Ties: ' + countTies);
-               playerSelection = window.prompt('ROUND 4: What is your selection?');
-               playRound(playerSelection);
-               console.log('Wins: ' + countWins + ' Losses: ' + countLosses + ' Ties: ' + countTies);
-               playerSelection = window.prompt('ROUND 5: What is your selection?');
-               playRound(playerSelection);
-               console.log('Wins: ' + countWins + ' Losses: ' + countLosses + ' Ties: ' + countTies);
+               do{
+                let playerSelection = window.prompt('ROUND ' + countRounds + ': What is your selection?');
+                playRound(playerSelection);
+                console.log('Wins: ' + countWins + ' Losses: ' + countLosses + ' Ties: ' + countTies);
+                ++countRounds;
+               }
+               while ((countWins + countLosses) < 5);
+               //return winner//
+               if (countWins > countLosses){
+                   console.log('You are the WINNER!');
+               } else if (countLosses > countWins){
+                   console.log('You are the LOSER.');
+               } else {
+                   console.log('Something might be wrong here.');
+               }
            }
 
         </script>
