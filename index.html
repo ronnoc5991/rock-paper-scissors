@@ -1,0 +1,190 @@
+<html>
+<style>
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 2fr 5fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+#roundinformation {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display:grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+
+    #roundcounter{
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        justify-self: center;
+        font-size: 60;
+    }
+
+    #scoretitles{
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+        #winstitle{
+            grid-column-start: 1;
+            grid-column-end: 2;
+            justify-self: center;
+        }
+
+        #lossestitle{
+            grid-column-start: 2;
+            grid-column-end: 3;
+            justify-self: center;
+        }
+
+        #tiestitle{
+            grid-column-start: 3;
+            grid-column-end: 4;
+            justify-self: center;
+        }
+
+    #scorecounter{
+        grid-row-start: 3;
+        grid-row-end: 4;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        font-size: 38;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+        #wins{
+            grid-column-start: 1;
+            grid-column-end: 2;
+            justify-self: center;
+        }
+
+        #losses{
+            grid-column-start: 2;
+            grid-column-end: 3;
+            justify-self: center;
+        }
+
+        #ties{
+            grid-column-start: 3;
+            grid-column-end: 4;
+            justify-self: center;
+        }
+
+#gameplay {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+}
+
+.options{
+    margin-left: 50;
+    margin-right: 50;
+    border: 6px solid black;
+    width: 65%;
+    padding-top: 65%;
+    text-align: center;
+    border-radius: 50%;
+}
+
+#Rock{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    align-self: center;
+    justify-self: center;
+    background-image: url(/home/cstreng95/the_odin_project/rock-paper-scissors/PlayerRock1.jpg);
+}
+
+#Rock:hover{
+    border: 8px solid yellow;
+    transform: scale(1.1);
+}
+
+#Paper{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    align-self: center;
+    justify-self: center;
+    background-image: url(/home/cstreng95/the_odin_project/rock-paper-scissors/PlayerPaper1.jpg);
+}
+
+#Paper:hover{
+    border: 8px solid yellow;
+    transform: scale(1.1);
+}
+
+#Scissors{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    align-self: center;
+    justify-self: center;
+    background-image: url(/home/cstreng95/the_odin_project/rock-paper-scissors/PlayerScissors1.jpg);
+}
+
+#Scissors:hover{
+    border: 8px solid yellow;
+    transform: scale(1.1);
+}
+
+</style>
+
+    <head>
+        <title>Rock Paper Scissors</title>
+    </head>
+
+    <div id = "container">
+
+        <div id="roundinformation">
+            <div id="roundcounter"> ROUND 1</div>
+            
+            <div id="scoretitles">
+                <div id="winstitle">WINS</div>
+                <div id="lossestitle">LOSSES</div>
+                <div id="tiestitle">TIES</div>
+
+            </div>
+            
+            <div id="scorecounter">
+                <div id="wins">0</div>
+                <div id="losses">0</div>
+                <div id="ties">0</div>
+            </div>
+        </div>
+
+        <div id="gameplay">
+            <div id="Rock" class="options"></div>
+            <div id="Paper" class="options"></div>
+            <div id="Scissors" class="options"></div>
+        </div>
+
+    </div>
+
+    <script src = "rps.js"></script>
+
+</html>
