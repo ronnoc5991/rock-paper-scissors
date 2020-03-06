@@ -2,6 +2,11 @@ var options = Array('ROCK' , 'PAPER' , 'SCISSORS');
 document.getElementById("Rock").addEventListener("click", playerRock);
 document.getElementById("Paper").addEventListener('click' , playerPaper);
 document.getElementById("Scissors").addEventListener('click' , playerScissors);
+document.getElementById("play").addEventListener('click', playclicked);
+
+function playclicked(){
+    console.log('play');
+}
 
 let winCount = 0;
 let lossCount = 0;
