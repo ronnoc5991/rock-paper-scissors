@@ -22,7 +22,7 @@
     display:grid;
     justify-content: center;
     align-items: center;
-    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
@@ -34,12 +34,21 @@
         grid-column-start: 1;
         grid-column-end: 4;
         justify-self: center;
+        font-size: 48;
+    }
+    
+    #roundnumber{
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        justify-self: center;
         font-size: 60;
     }
 
     #scoretitles{
-        grid-row-start: 2;
-        grid-row-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;
         grid-column-start: 1;
         grid-column-end: 4;
         display: grid;
@@ -65,8 +74,8 @@
         }
 
     #scorecounter{
-        grid-row-start: 3;
-        grid-row-end: 4;
+        grid-row-start: 4;
+        grid-row-end: 5;
         grid-column-start: 1;
         grid-column-end: 4;
         font-size: 38;
@@ -118,7 +127,6 @@
     grid-column-end: 2;
     align-self: center;
     justify-self: center;
-    background-image: url(/home/cstreng95/the_odin_project/rock-paper-scissors/PlayerRock1.jpg);
 }
 
 #Rock:hover{
@@ -131,7 +139,6 @@
     grid-column-end: 3;
     align-self: center;
     justify-self: center;
-    background-image: url(/home/cstreng95/the_odin_project/rock-paper-scissors/PlayerPaper1.jpg);
 }
 
 #Paper:hover{
@@ -144,7 +151,6 @@
     grid-column-end: 4;
     align-self: center;
     justify-self: center;
-    background-image: url(/home/cstreng95/the_odin_project/rock-paper-scissors/PlayerScissors1.jpg);
 }
 
 #Scissors:hover{
@@ -161,7 +167,8 @@
     <div id = "container">
 
         <div id="roundinformation">
-            <div id="roundcounter"> ROUND 1</div>
+            <div id="roundcounter"> ROUND</div>
+            <div id="roundnumber">1</div>
             
             <div id="scoretitles">
                 <div id="winstitle">WINS</div>
@@ -171,9 +178,9 @@
             </div>
             
             <div id="scorecounter">
-                <div id="wins">0</div>
-                <div id="losses">0</div>
-                <div id="ties">0</div>
+                <div id="wins"></div>
+                <div id="losses"></div>
+                <div id="ties"></div>
             </div>
         </div>
 
